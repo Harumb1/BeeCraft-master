@@ -1,0 +1,12 @@
+name: Beecraft
+version: '${project.version}'
+main: beecraft.beecraft.Beecraft
+api-version: 1.18
+authors: [ _NickV, Harumb1 ]
+description: The core plugin for BeeCraft!
+commands:
+  help:
+    description: Server help command
+    aliases: [h]
+  bees:
+    description: Server help command
