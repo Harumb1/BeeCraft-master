@@ -26,6 +26,7 @@ public class BeeCraft extends JavaPlugin {
         getCommand("help").setExecutor(new HelpCommand());
 
         getCommand("bees").setExecutor(new BeeCommand());
+
     }
 
 
