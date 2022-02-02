@@ -10,3 +10,7 @@ commands:
     aliases: [h]
   bees:
     description: Server help command
+  home:
+    description: Home command
+  sethome:
+    description: Home command

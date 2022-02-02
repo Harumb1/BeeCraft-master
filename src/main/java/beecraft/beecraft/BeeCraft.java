@@ -2,6 +2,8 @@ package beecraft.beecraft;
 
 import beecraft.beecraft.commands.BeeCommand;
 import beecraft.beecraft.commands.HelpCommand;
+import beecraft.beecraft.commands.HomeCommand;
+import beecraft.beecraft.commands.SetHomeCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BeeCraft extends JavaPlugin {
@@ -26,6 +28,10 @@ public class BeeCraft extends JavaPlugin {
         getCommand("help").setExecutor(new HelpCommand());
 
         getCommand("bees").setExecutor(new BeeCommand());
+
+        getCommand("home").setExecutor(new HomeCommand());
+
+        getCommand("sethome").setExecutor(new SetHomeCommand());
 
     }
 

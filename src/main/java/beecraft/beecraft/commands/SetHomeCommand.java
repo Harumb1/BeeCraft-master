@@ -1,5 +1,6 @@
 package beecraft.beecraft.commands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -13,8 +14,6 @@ import java.util.Map;
 
 public class SetHomeCommand implements CommandExecutor {
 
-    private Map<Player, Location> theMap = HomeCommand.theMap;
-
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (sender instanceof ConsoleCommandSender) {
             sender.sendMessage("Error: Player only command!");
@@ -22,7 +21,6 @@ public class SetHomeCommand implements CommandExecutor {
         }
 
         Player player = (Player) sender; // Cast the CommandSender to a Player
-
 
 
         return false;

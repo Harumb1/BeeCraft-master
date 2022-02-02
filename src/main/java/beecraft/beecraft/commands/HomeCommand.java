@@ -16,8 +16,8 @@ This is the PlayerHomeCommand class, represents a command
 it implements the CommandExecutor interface: PlayerHomeCommand HAS A CommandExecutor
  */
 public class HomeCommand implements CommandExecutor {
-
     public static Map<Player, Location> theMap = new HashMap<>();
+
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (sender instanceof ConsoleCommandSender) {
