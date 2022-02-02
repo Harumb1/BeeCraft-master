@@ -1,5 +1,6 @@
 package beecraft.beecraft.commands;
 
+import beecraft.beecraft.Home;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -17,15 +18,17 @@ public class SetHomeCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (sender instanceof ConsoleCommandSender) {
             sender.sendMessage("Error: Player only command!");
-
             return true;
         }
 
-
         Player player = (Player) sender; // Cast the CommandSender to a Player
 
-        HomeCommand.theMap.put(player, player.getLocation());
+        Home toCreate = new Home(player.getName() + "'s home", player.getLocation(), player);
 
+        HomeCommand.theMap.put(player, toCreate);
+
+        player.sendMessage("Created a new home at " + player.getLocation().getBlockX()
+                + " " + player.getLocation().getZ() + ".");
         return false;
     }
 

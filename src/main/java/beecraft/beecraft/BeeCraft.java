@@ -1,9 +1,6 @@
 package beecraft.beecraft;
 
-import beecraft.beecraft.commands.BeeCommand;
-import beecraft.beecraft.commands.HelpCommand;
-import beecraft.beecraft.commands.HomeCommand;
-import beecraft.beecraft.commands.SetHomeCommand;
+import beecraft.beecraft.commands.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BeeCraft extends JavaPlugin {
@@ -14,9 +11,6 @@ public class BeeCraft extends JavaPlugin {
      */
     @Override
     public void onEnable() {
-
-
-
         /*
         get the server logger and call the info() message, which takes in a String message
          */
@@ -33,6 +27,7 @@ public class BeeCraft extends JavaPlugin {
 
         getCommand("sethome").setExecutor(new SetHomeCommand());
 
+        getCommand("listhomes").setExecutor(new ListHomesCommand());
     }
 
 

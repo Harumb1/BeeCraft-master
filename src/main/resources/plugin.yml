@@ -1,6 +1,6 @@
 name: Beecraft
 version: '${project.version}'
-main: beecraft.beecraft.Beecraft
+main: beecraft.beecraft.BeeCraft
 api-version: 1.18
 authors: [ _NickV, Harumb1 ]
 description: The core plugin for BeeCraft!
@@ -13,4 +13,6 @@ commands:
   home:
     description: Home command
   sethome:
+    description: Home command
+  listhomes:
     description: Home command

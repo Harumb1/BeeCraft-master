@@ -1,5 +1,7 @@
 package beecraft.beecraft.commands;
 
+import beecraft.beecraft.Home;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -16,8 +18,10 @@ This is the PlayerHomeCommand class, represents a command
 it implements the CommandExecutor interface: PlayerHomeCommand HAS A CommandExecutor
  */
 public class HomeCommand implements CommandExecutor {
-    public static Map<Player, Location> theMap = new HashMap<>();
-
+    /*
+    The home map itself
+     */
+    public static Map<Player, Home> theMap = new HashMap<>();
 
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (sender instanceof ConsoleCommandSender) {
@@ -25,19 +29,18 @@ public class HomeCommand implements CommandExecutor {
             return true;
         }
 
-        Player player = (Player) sender; // Cast the CommandSender to a Player
-
+        Player player = (Player) sender;
 
         if (theMap.get(player) == null) {
-            theMap.put(player, player.getLocation());
-            player.sendMessage("you didn't have a home, so we created one where you're standing now.");
+            player.sendMessage("Error: You don't have a home. Use /sethome to create a new one.");
             return true;
         }
 
-        Location playerHome = theMap.get(player);
+        Home playerHome = theMap.get(player);
 
-        player.teleport(playerHome);
+        theMap.get(player).teleportHome();
 
+        playerHome.teleportHome();
         player.sendMessage(ChatColor.RED + "Teleported home!");
         return false;
     }
