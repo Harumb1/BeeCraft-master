@@ -17,11 +17,14 @@ public class SetHomeCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
         if (sender instanceof ConsoleCommandSender) {
             sender.sendMessage("Error: Player only command!");
+
             return true;
         }
 
+
         Player player = (Player) sender; // Cast the CommandSender to a Player
 
+        HomeCommand.theMap.put(player, player.getLocation());
 
         return false;
     }
