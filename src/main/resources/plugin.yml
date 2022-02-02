@@ -16,3 +16,5 @@ commands:
     description: Home command
   listhomes:
     description: Home command
+  delhome:
+    description: Home command

@@ -28,7 +28,10 @@ public class BeeCraft extends JavaPlugin {
         getCommand("sethome").setExecutor(new SetHomeCommand());
 
         getCommand("listhomes").setExecutor(new ListHomesCommand());
+
+        getCommand("delhome").setExecutor(new DelHomeCommand());
     }
+
 
 
     /**
